@@ -118,5 +118,17 @@ curl -o .cursorrules https://raw.githubusercontent.com/zendaleebz/antigravity-st
 
 ---
 
+## 🤖 Protocol for AI Agents
+
+If you are an AI agent working in a repository that implements these standards, follow these instructions:
+
+1.  **Sync the Rules**: Ensure the `.cursorrules` in your current project matches the latest version from `antigravity-standards`.
+2.  **Verify Tech Stack**: If starting a task, verify that the project uses the sanctioned stack (TypeScript, Tailwind, TanStack Query, Zustand).
+3.  **Consult the Source**: Read the full documentation at `https://github.com/zendaleebz/antigravity-standards/blob/main/README.md` before making architectural decisions.
+4.  **Enforce Feature-Slicing**: Always place new logic inside `src/features/[domain]`. Do not create broad `utils/` or `components/` folders for feature-specific code.
+5.  **Use Design Tokens**: Never hardcode hex values or transition timings. Always refer to `@zendaleebz/antigravity-standards` or the local Tailwind theme extension.
+
+---
+
 ## 📄 License
 MIT © [zendaleebz](https://github.com/zendaleebz)
