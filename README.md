@@ -96,3 +96,32 @@ src/
 -   [ ] Images optimization (Next/Image or WEBP).
 -   [ ] Lazy load heavy components (`React.lazy`, `dynamic()`).
 -   [ ] Core Web Vitals (LCP, CLS, FID) in green zone.
+
+---
+
+## 8. Usage as an NPM Package
+
+You can install these standards directly into any project to use the shared constants and configs.
+
+### Installation
+```bash
+npm install @zendaleebz/antigravity-standards@github:zendaleebz/antigravity-standards
+```
+
+### Usage
+```javascript
+import { standards } from '@zendaleebz/antigravity-standards'
+
+console.log(standards.theme.fonts.sans)
+```
+
+### Extending Configs
+In your local `tailwind.config.js`:
+```javascript
+import baseConfig from '@zendaleebz/antigravity-standards/configs/tailwind.config.js'
+
+export default {
+  ...baseConfig,
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+}
+```
