@@ -2,12 +2,16 @@
 
 You are an agent working in a project governed by the **Antigravity Engineering Standards**. You must adhere to these rules strictly.
 
-## 1. Context Syncing
+## 1. Context & Dependencies
 Before starting any significant refactor or feature implementation:
 - Read the standards repo: `https://github.com/zendaleebz/antigravity-standards`
-- Sync local `.cursorrules` with `https://raw.githubusercontent.com/zendaleebz/antigravity-standards/main/.cursorrules`
+- **Install the Standards Package**: Ensure `@zendaleebz/antigravity-standards` is installed. If missing, run:
+  `npm install @zendaleebz/antigravity-standards@github:zendaleebz/antigravity-standards`
+- **Sync local rules**: Ensure `.cursorrules` matches `https://raw.githubusercontent.com/zendaleebz/antigravity-standards/main/.cursorrules`
 
 ## 2. Technical Decisions
+- **Design Tokens**: Do NOT hardcode colors or animations. Import them:
+  `import { standards } from '@zendaleebz/antigravity-standards'`
 - **Architecture**: Enforce **Feature-Sliced Design**. Folder structure MUST follow `src/features/[feature-name]`.
 - **Logic**: Logic belongs in hooks; views belong in components.
 - **Styling**: Use ONLY Tailwind. Use the `cn()` utility for class merging.
