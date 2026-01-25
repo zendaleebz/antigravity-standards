@@ -74,12 +74,22 @@ import '@testing-library/jest-dom'
     }
     ```
 
-## 5. Artifact Initialization
+## 5. Import Standards (The "Soul" of the Project)
+Download the latest engineering standards and AI instructions from the `antigravity-standards` repo.
+```bash
+# Fetch .cursorrules for AI behavior
+curl -o .cursorrules https://raw.githubusercontent.com/zendaleebz/antigravity-standards/main/.cursorrules
+
+# Fetch specific Claude instructions if needed
+curl -o claude.md https://raw.githubusercontent.com/zendaleebz/antigravity-standards/main/claude.md
+```
+
+## 6. Artifact Initialization
 Create the following empty artifacts in the brain directory:
 -   `task.md`
 -   `implementation_plan.md` (filled with the initial plan)
 
-## 6. Verification
+## 7. Verification
 Run the dev server and test suite to ensure the scaffold is healthy.
 ```bash
 npm run dev
