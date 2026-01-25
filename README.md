@@ -1,127 +1,122 @@
-# Antigravity Engineering Standards
+# 🌌 Antigravity Engineering Standards
 
-This document is the **Single Source of Truth** for all Antigravity engineering projects. It codifies our technology choices, coding standards, and design philosophy.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Mandatory-38B2AC.svg)](https://tailwindcss.com/)
 
-## 1. Core Philosophy
+The **Antigravity Engineering Standards** is a codified set of principles, technology choices, and design patterns used to build premium web applications. This repository serves as both a documentation hub and an installable configuration package.
 
-**"It's not done until it wows."**
-
-We build software that feels *premium*, *alive*, and *robust*. We prioritize interaction design just as highly as code quality.
-
-## 2. Technology Stack
-
-### Essentials
--   **Runtime**: Node.js (LTS).
--   **Language**: TypeScript (Strict Mode). **No `any`**, ever.
--   **Package Manager**: `npm`.
--   **Frameworks**:
-    -   **Web Apps**: Next.js (App Router).
-    -   **Marketing/Landing**: Vite + React or Astro.
-
-### Styling & UI
--   **Tailwind CSS**: Mandatory. Utilize `clsx` and `tailwind-merge` for conditional classes.
--   **Icons**: `lucide-react`.
--   **Animation**: `framer-motion` for complex interactions; CSS transitions for simple states.
--   **Components**: Build composed, headless logic where possible.
-
-### State & Data
--   **Server State**: TanStack Query (React Query) or SWR. Avoid `useEffect` for data fetching.
--   **Client State**: Zustand (preferred) or React Context for simple dependency injection. **Avoid Redux**.
-
-### Testing
--   **Unit**: Vitest.
--   **E2E**: Playwright.
--   **Philosophy**: "Test behavior, not implementation details."
-
-## 3. Coding Standards
-
-### TypeScript
--   **Explicit Return Types**: All functions must have explicit return types.
--   **Interfaces over Types**: Use `interface` for object definitions (better error messages/performance).
--   **No Enums**: Use `const` assertions (`as const`) instead.
-    ```typescript
-    // DO THIS
-    export const Status = {
-      Active: 'active',
-      Inactive: 'inactive',
-    } as const;
-    export type Status = typeof Status[keyof typeof Status];
-    ```
-
-### React Patterns
--   **Functional Components**: Arrow functions preferred.
--   **Hooks**: Extract complex logic into custom hooks (`useValidation`, `useAuth`).
--   **Composition**: Use `children` prop to solve prop drilling.
--   **Event Handlers**: Prefix with `handle` (e.g., `handleSubmit`, `handleClick`).
--   **Props**: Prefix with `on` (e.g., `onSubmit`, `onClick`).
-
-### CSS / Styling
--   **Mobile First**: Write mobile styles by default, use `md:`, `lg:` for larger screens.
--   **Tokens**: Use CSS variables for colors to support theming (Dark Mode).
-
-## 4. Project Structure (Feature-Based)
-
-Structure applications by **feature**, not technical layer.
-
-```
-src/
-├── features/
-│   ├── auth/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   └── types.ts
-│   └── dashboard/
-├── components/          # Shared/Global components (Button, Input)
-├── lib/                 # Shared utilities (axios, cn)
-└── app/                 # Next.js App Router (pages only)
-```
-
-## 5. Design Guidelines
-
-### The "Antigravity" Aesthetic
-1.  **Glassmorphism**: Subtle, multi-layered blurs/transparency.
-2.  **Typography**: Inter or similar variable sans-serif. Tight tracking (-0.02em approx).
-3.  **Interaction**:
-    -   All interactive elements must have `:hover`, `:active`, and `:focus-visible` states.
-    -   Transitions should be `duration-200 ease-out`.
-
-## 6. Git & Workflow
-
--   **Commits**: Conventional Commits (e.g., `feat: add login`, `fix: resolve crash`).
--   **PRs**: Small, focused chunks (< 400 lines).
--   **Main**: Always deployable.
-
-## 7. Performance Checklist
--   [ ] Images optimization (Next/Image or WEBP).
--   [ ] Lazy load heavy components (`React.lazy`, `dynamic()`).
--   [ ] Core Web Vitals (LCP, CLS, FID) in green zone.
+> **"It's not done until it wows."**
 
 ---
 
-## 8. Usage as an NPM Package
+## 🚀 Key Pillars
 
-You can install these standards directly into any project to use the shared constants and configs.
+### 1. The "Wow" Factor
+We don't build generic software. Every interface must feel **alive** through micro-animations, glassmorphism, and intentional feedback loops.
 
-### Installation
+### 2. Radical Type-Safety
+Strict TypeScript is not optional. We ban `any` and embrace compile-time safety to move faster and break less.
+
+### 3. Feature-Sliced Architecture
+Applications are organized by **domain**, not technical type. This keeps logic isolated, testable, and scalable.
+
+---
+
+## 📦 Package Features
+
+This repo is a dual-purpose tool:
+1.  **Documentation**: A guide for humans.
+2.  **Configuration**: An NPM package for machines.
+
+### Included Configs:
+-   🎨 **Design Tokens**: Centralized colors, typography, and animation presets.
+-   💅 **Tailwind**: A base configuration with pre-defined utility extensions.
+-   🛡️ **TypeScript**: Strict-mode base `tsconfig.json`.
+-   🧹 **Prettier**: Optimized for clean, modern Javascript/TypeScript.
+-   🤖 **AI Rules**: `.cursorrules` and `claude.md` to keep your AI pair-programmers aligned with these standards.
+
+---
+
+## 🛠 Installation
+
+You can install these standards directly into any project using GitHub as the registry:
+
 ```bash
 npm install @zendaleebz/antigravity-standards@github:zendaleebz/antigravity-standards
 ```
 
-### Usage
-```javascript
+---
+
+## 📖 Usage Guide
+
+### 1. Using Design Tokens
+Import the shared standards object to keep your styles consistent across various components and tools.
+
+```typescript
 import { standards } from '@zendaleebz/antigravity-standards'
 
-console.log(standards.theme.fonts.sans)
+// Example: Accessing typography or brand colors
+const primaryFont = standards.theme.fonts.sans;
+const hoverEffect = standards.theme.animations.hover;
 ```
 
-### Extending Configs
-In your local `tailwind.config.js`:
+### 2. Extending Tailwind
+Extend your local `tailwind.config.js` with the Antigravity base:
+
 ```javascript
 import baseConfig from '@zendaleebz/antigravity-standards/configs/tailwind.config.js'
 
 export default {
   ...baseConfig,
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  // Override or add new settings here
+  theme: {
+    extend: {
+      ...baseConfig.theme.extend,
+    }
+  }
 }
 ```
+
+### 3. TypeScript Config
+In your `tsconfig.json`:
+
+```json
+{
+  "extends": "@zendaleebz/antigravity-standards/configs/tsconfig.json",
+  "include": ["src"],
+}
+```
+
+---
+
+## 📁 Directory Structure
+Our recommended project layout:
+
+```text
+src/
+├── features/            # Feature-based logic (auth, dashboard)
+│   └── [feature-name]/
+│       ├── components/  # Domain-specific UI
+│       ├── hooks/       # Domain-specific logic
+│       └── services/    # Data fetching/API calls
+├── components/          # Shared atomic UI (Button, Input)
+├── lib/                 # Shared utilities (cn, axios)
+└── app/                 # Framework routing (Next.js App Router)
+```
+
+---
+
+## 🤖 AI Pair Programming
+To ensure your AI assistant follows these rules, copy the `.cursorrules` file or `claude.md` to your project root. Our setup workflow handles this automatically:
+
+```bash
+# Fetch behavior rules
+curl -o .cursorrules https://raw.githubusercontent.com/zendaleebz/antigravity-standards/main/.cursorrules
+```
+
+---
+
+## 📄 License
+MIT © [zendaleebz](https://github.com/zendaleebz)
