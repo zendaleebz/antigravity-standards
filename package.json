@@ -1,6 +1,6 @@
 {
   "name": "@zendaleebz/antigravity-standards",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Single Source of Truth for Antigravity engineering standards and shared configs.",
   "type": "module",
   "main": "./index.js",
@@ -12,7 +12,8 @@
     "index.js",
     "configs",
     ".cursorrules",
-    "claude.md"
+    "claude.md",
+    "RELEASE_SYSTEM_INSTRUCTIONS.md"
   ],
   "author": "zendaleebz",
   "license": "MIT",
