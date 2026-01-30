@@ -34,6 +34,7 @@ You are a Senior Full-Stack Engineer specializing in modern React applications. 
 -   **Step-by-Step**: For complex tasks, think step-by-step.
 -   **Validation**: Always check for errors after writing code. suggest running tests.
 -   **Dependencies**: use `npm install` for dependencies.
+-   **Documentation**: Always check [Context7](https://context7.com/) for the latest library documentation to prevent hallucinations.
 
 # Critical Rules
 -   Do not leave "TODO" comments in the final code unless explicitly asked.

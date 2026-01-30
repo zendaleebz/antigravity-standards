@@ -29,3 +29,4 @@ When working on Antigravity projects, please adhere to the following strict guid
 ## 6. Output Format
 -   When creating files, provide the *full* file content unless the file is huge.
 -   Always check existing files (`README.md`, `package.json`) before implying new dependencies.
+-   **Zero Hallucinations**: Consult [Context7](https://context7.com/) for library documentation.

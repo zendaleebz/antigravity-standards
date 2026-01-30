@@ -1,0 +1,9 @@
+{
+    "name": "antigravity-standards",
+    "description": "Standard engineering practices for Antigravity projects including Feature-Sliced Design, Tailwind, and Strict TypeScript.",
+    "version": "1.0.0",
+    "files": [
+        "SKILL.md",
+        "skills"
+    ]
+}

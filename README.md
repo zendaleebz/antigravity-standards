@@ -46,6 +46,14 @@ You can install these standards directly into any project using GitHub as the re
 npm install @zendaleebz/antigravity-standards@github:zendaleebz/antigravity-standards
 ```
 
+### Install as Context7 Skill
+
+You can also install these standards as a skill for your AI agent using [Context7](https://context7.com/):
+
+```bash
+npx ctx7 skills install zendaleebz/antigravity-standards
+```
+
 ---
 
 ## 📖 Usage Guide
