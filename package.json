@@ -1,12 +1,13 @@
 {
   "name": "@zendaleebz/antigravity-standards",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The Single Source of Truth for Antigravity engineering standards and shared configs.",
   "type": "module",
   "main": "./index.js",
   "exports": {
     ".": "./index.js",
-    "./configs/*": "./configs/*"
+    "./configs/*": "./configs/*",
+    "./skills/*": "./skills/*"
   },
   "files": [
     "index.js",
